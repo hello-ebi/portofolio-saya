@@ -2,10 +2,10 @@ import React from 'react';
 
 function Contact() {
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-white h-screen">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Kontak Saya</h2>
-        
+
       </div>
     </section>
   );
