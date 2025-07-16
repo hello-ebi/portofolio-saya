@@ -25,7 +25,7 @@ function Hero() {
           </p>
           <a
             href="#about"
-            className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
+            className="bg-white text-stone-950 px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
           >
             Portofolio
           </a>
