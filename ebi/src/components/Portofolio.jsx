@@ -1,12 +1,11 @@
 import React from 'react';
 
-console.log("halo");
 
 function Portfolio() {
   const projects = [
-    { id: 1, title: 'Project 1', description: 'A web app built with React and Tailwind.', link: '#', image: 'https://via.placeholder.com/300' },
-    { id: 2, title: 'Project 2', description: 'E-commerce platform with modern UI.', link: '#', image: 'https://via.placeholder.com/300' },
-    { id: 3, title: 'Project 3', description: 'Portfolio website for a client.', link: '#', image: 'https://via.placeholder.com/300' },
+    { id: 1, title: 'Project 1', description: 'A web app built with React and Tailwind.', link: '#', image: 'https://images.unsplash.com/photo-1682687220640-9d3b11ca30e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { id: 2, title: 'Project 2', description: 'E-commerce platform with modern UI.', link: '#', image: 'https://images.unsplash.com/photo-1682687220640-9d3b11ca30e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { id: 3, title: 'Project 3', description: 'Portfolio website for a client.', link: '#', image: 'https://images.unsplash.com/photo-1682687220640-9d3b11ca30e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   ];
 
   return (

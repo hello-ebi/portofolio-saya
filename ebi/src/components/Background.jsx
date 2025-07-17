@@ -4,9 +4,9 @@ import ebilaptop from '../assets/images/ebikomputr.gif';
 function Background() {
   return (
     <>
-      <div className="w-1/2 bg-black"></div>
+      <div className="w-1/2 bg-black hidden sm:block"></div>
       <div
-        className="w-1/2"
+        className="w-full mx-auto sm:w-1/2"
         style={{
           backgroundImage: `url(${ebilaptop})`,
           backgroundSize: 'cover',
@@ -14,7 +14,6 @@ function Background() {
           backgroundRepeat: 'no-repeat',
         }}
       ></div>
-    
     </>
   );
 }
