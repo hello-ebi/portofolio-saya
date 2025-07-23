@@ -1,4 +1,3 @@
-import React from 'react';
 import ebilaptop from '../assets/images/ebikomputr.gif';
 
 function Background() {
@@ -6,7 +5,7 @@ function Background() {
     <>
       <div className="w-1/2 bg-black hidden sm:block"></div>
       <div
-        className="w-full mx-auto sm:w-1/2"
+        className="w-full mx-auto bg-black sm:w-1/2"
         style={{
           backgroundImage: `url(${ebilaptop})`,
           backgroundSize: 'cover',

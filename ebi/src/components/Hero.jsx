@@ -1,11 +1,12 @@
-import React from 'react';
-import Background from './Background';
+import Background2 from './Background2';
 import { motion } from 'framer-motion';
+
+
 
 function Hero() {
   return (
     <section id="hero" className="h-screen flex text-white">
-      <Background />
+      <Background2 />
       <div
         className="absolute w-full left-1/2 transform -translate-x-1/2 h-screen flex items-center justify-center sm:left-0 sm:w-[60%] sm:transform-none"
       >
