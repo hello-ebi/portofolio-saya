@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ebilogogif from '../assets/gif/hello-ebilogogip.gif'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,7 +7,10 @@ function Navbar() {
   return (
     <nav className="bg-stone-950 text-white p-4 sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Portfolio</h1>
+<div className="flex-shrink-0 max-w-[100px]">
+  <img src={ebilogogif} alt="ebi" className="w-[100px]" />
+</div>
+
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

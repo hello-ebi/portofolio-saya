@@ -8,7 +8,7 @@ function Hero() {
     <section id="hero" className="h-screen flex text-white">
       <Background2 />
       <div
-        className="absolute w-full left-1/2 transform -translate-x-1/2 h-screen flex items-center justify-center sm:left-0 sm:w-[60%] sm:transform-none"
+        className="absolute w-full transform h-screen flex items-center justify-center sm:transform-none"
       >
         <div className="text-center px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-1">
@@ -23,11 +23,11 @@ function Hero() {
             </motion.span>
           </h1>
           <p className="text-lg md:text-2xl mb-6">
-            Saya sedang belajar menjadi Fullstack Developer
+            Saya adalah Fullstack Developer
           </p>
           <a
             href="#about"
-            className="bg-white text-stone-950 px-6 py-3 rounded-full font-semibold hover:bg-gray-200"
+            className="bg-white text-stone-950 px-[100px] py-3 md:px-6 md:py-3 rounded-full sm:w-auto font-semibold hover:bg-gray-200"
           >
             Portofolio
           </a>
