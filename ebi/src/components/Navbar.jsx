@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import ebilogogif from '../assets/gif/hello-ebilogogip.gif'
 
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-stone-950 text-white p-4 sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
-<div className="flex-shrink-0 max-w-[100px]">
+<div className=" max-w-[100px]">
   <img src={ebilogogif} alt="ebi" className="w-[100px]" />
 </div>
 
