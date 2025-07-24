@@ -1,5 +1,5 @@
+import { useState, useRef, useEffect } from "react";
 import Footer from "./Footer";
-import { useState, useRef } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -26,15 +26,37 @@ Hormat saya,
 
 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+const phrases = ["Kadang,", "keheningan", "justru", "paling banyak bercerita"];
 
 
 function Contact() {
   const [clicked, setClicked] = useState(false);
-  const audioRef = useRef(null);
+  const [textIndex, setTextIndex] = useState(0);
+const [fade, setFade] = useState(true);
+ const audioRef = useRef(null);
+  const [textVariant, setTextVariant] = useState("normal");
+
+useEffect(() => {
+  if (clicked) {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setTextIndex((prev) => (prev + 1) % phrases.length);
+        setFade(true);
+      }, 2000);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }
+}, [clicked]);
+
+
+ 
 
   const handleClick = () => {
     if (!clicked) {
       setClicked(true);
+      setTextVariant("alt");
       setTimeout(() => {
         if (audioRef.current) {
           audioRef.current.play();
@@ -42,6 +64,7 @@ function Contact() {
       }, 700);
     } else {
       setClicked(false);
+      setTextVariant("normal");
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
@@ -77,7 +100,9 @@ function Contact() {
       <audio ref={audioRef} src={backsound} preload="auto" />
 
       <div className="absolute left-20 mt-12 z-20">
-        <h1 className="text-5xl font-bold text-left text-gray-100 mb-5">Kontak Saya</h1>
+{textVariant === "normal" ? (
+  <>
+          <h1 className="text-5xl font-bold text-left text-gray-100 mb-5">Kontak Saya</h1>
         <p className="text-xl text-gray-100">
           Saat ini saya terbuka untuk peluang kerja sama dan kolaborasi baru. <br /> Jangan ragu untuk menghubungi saya untuk bekerja sama, <br /> atau sekedar ingin terkoneksi! <br />
         </p>
@@ -99,6 +124,17 @@ function Contact() {
           <FaXTwitter className="text-[35px] mt-[1px]" /> &nbsp;
           <a href="https://x.com/penantanghilang" className="text-3xl hover:bg-gray-100 rounded hover:text-black hover:duration-300 hover:delay-150">penantang.hilang</a>
         </div>
+  </>
+) : (
+      <>
+<div className="h-[150px] transition-opacity duration-500" style={{ opacity: fade ? 1 : 0 }}>
+  <p className="text-5xl ml-10 text-gray-100">{phrases[textIndex]}</p>
+</div>
+
+    </>
+)
+
+}
       </div>
       <div className="container relative bg-white opacity-10 rounded-3xl h-[65vh] z-10 mx-auto px-3"></div>
       <div className="absolute bottom-0 w-full">
