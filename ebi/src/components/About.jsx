@@ -1,40 +1,76 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import ebikomputr from '../assets/gif/ebikomputr.gif';
+import { SiJavascript, SiExpress, SiMysql, SiBulma, SiMongodb } from "react-icons/si";
+import { FaCss3, FaNodeJs, FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { VscVscodeInsiders } from "react-icons/vsc";
 
 function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
+  const skillIcons = [
+    SiJavascript,
+    FaCss3,
+    SiBulma,
+    RiTailwindCssFill,
+    SiMysql,
+    SiMongodb,
+    SiExpress,
+    FaReact,
+    FaNodeJs
+  ];
+
+  const toolsIcons = [
+    VscVscodeInsiders,
+    FaGitAlt,
+    FaGithub
+  ]
+
   return (
     <section
       id="about"
-      className="pt-[100px] h-screen bg-black flex flex-col justify-between items-center"
+      className="pt-[100px] h-screen bg-black flex flex-col justify-between items-start"
     >
-<div className="relative z-10">
+      <div className="relative z-10">
         <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="container mx-auto px-4"
-      >
-        <h2 className="text-3xl font-bold text-gray-50 text-center mb-4">About Me</h2>
-        <p className="text-lg text-gray-100 text-center max-w-2xl mx-auto">
-          Hard skill soft skill
-        </p>
-      </motion.div>
-</div>
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container relative left-0 ml-10 h-[80vh] w-[70vw] px-4"
+        >
+          <h1 className="text-3xl font-bold text-gray-100 text-left mb-4">Tentang Saya</h1>
+          <p className="text-3xl text-gray-100 text-left mb-6">
+            Halo! Saya Febrian Eka Putra, biasa dipanggil ebi. Saya tinggal di Cikarang, Jawa Barat.
+            Saat ini saya sedang menempuh studi S1 Teknik Informatika di STMIK Pamitran.
+            Meski masih dalam tahap kuliah, saya sangat antusias dan aktif mendalami dunia pemrograman,
+            khususnya di bidang Fullstack Web Development, dan saya fokus mengembangkan skill di ekosistem JavaScript.
+          </p>
 
-<div className="relative w-full flex justify-center">
-  <img
-    src={ebikomputr}
-    alt="ebi laptop"
-    className="absolute z-0 right-0 bottom-0 max-h-[100vh] object-contain"
-  />
-</div>
+          <div className="text-gray-100 mb-1 text-xl font-semibold">Hard Skills</div>
+          <div className="flex flex-wrap gap-4 text-white text-7xl">
+            {skillIcons.map((Icon, index) => (
+              <Icon key={index} className="hover:text-yellow-400 text-gray-400 transition-all duration-200" />
+            ))}
+          </div>
+          <div className="text-gray-100 mt-4 mb-1 text-xl font-semibold">Tools</div>
+          <div className="flex flex-wrap gap-4 text-white text-7xl">
+            {toolsIcons.map((Icon, index) => (
+              <Icon key={index} className="hover:text-yellow-400 text-gray-400 transition-all duration-200" />
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
-
+      <div className="relative w-full flex z-0 justify-center">
+        <img
+          src={ebikomputr}
+          alt="ebi laptop"
+          className="absolute z-0 right-0 bottom-0 max-h-[100vh] object-contain"
+        />
+      </div>
     </section>
   );
 }

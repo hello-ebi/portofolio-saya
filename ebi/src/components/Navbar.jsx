@@ -20,10 +20,10 @@ function Navbar() {
           </button>
         </div>
         <ul className={`md:flex space-x-4 ${isOpen ? 'block' : 'hidden'} md:block absolute md:static w-full md:w-auto left-0 top-14 md:top-0 transition-all`}>
-          <li><a href="#hero" className="block p-2 hover:bg-stone-800">Home</a></li>
-          <li><a href="#about" className="block p-2 hover:bg-stone-800">About</a></li>
-          <li><a href="#portfolio" className="block p-2 hover:bg-stone-800">Portfolio</a></li>
-          <li><a href="#contact" className="block p-2 hover:bg-stone-800">Contact</a></li>
+          <li><a href="#hero" className="relative inline-block after:block after:h-[2px] p-2 after:bg-yellow-400 after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform">Beranda</a></li>
+          <li><a href="#about" className="relative inline-block after:block after:h-[2px] p-2 after:bg-yellow-400 after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform">Tentang</a></li>
+          <li><a href="#portfolio" className="relative inline-block after:block after:h-[2px] p-2 after:bg-yellow-400 after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform">Portofolio</a></li>
+          <li><a href="#contact" className="relative inline-block after:block after:h-[2px] p-2 after:bg-yellow-400 after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform">Kontak</a></li>
         </ul>
       </div>
     </nav>

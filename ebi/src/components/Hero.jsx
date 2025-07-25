@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function Hero() {
   return (
-    <section id="hero" className="h-screen flex text-white">
+    <section id="hero" className="h-screen flex text-gray-100">
       <Background2 />
       <div
         className="absolute w-full transform h-screen flex items-center justify-center sm:transform-none"
@@ -27,7 +27,7 @@ function Hero() {
           </p>
           <a
             href="#about"
-            className="bg-white text-stone-950 px-[100px] py-3 md:px-6 md:py-3 rounded-full sm:w-auto font-semibold hover:bg-gray-200"
+            className="bg-gray-200 text-stone-950 px-[100px] py-3 md:px-6 md:py-3 rounded-full sm:w-auto font-semibold hover:bg-yellow-400"
           >
             Portofolio
           </a>
