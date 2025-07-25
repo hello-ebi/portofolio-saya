@@ -5,6 +5,7 @@ import { SiJavascript, SiExpress, SiMysql, SiBulma, SiMongodb } from "react-icon
 import { FaCss3, FaNodeJs, FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { VscVscodeInsiders } from "react-icons/vsc";
+import { IoLogoVercel } from "react-icons/io5";
 import kucingcuddle from "../assets/images/kucingcuddle.png";
 
 function About() {
@@ -26,7 +27,8 @@ function About() {
   const toolsIcons = [
     VscVscodeInsiders,
     FaGitAlt,
-    FaGithub
+    FaGithub,
+    IoLogoVercel
   ]
 
   return (
