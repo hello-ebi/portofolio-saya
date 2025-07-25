@@ -1,14 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { FaPaperPlane } from "react-icons/fa";
 import backgroundContact from "../assets/videos/bg2.mp4";
 import ebihengker from "../assets/images/ebihengker.png";
 import matahurung from "../assets/images/ebimatahurung.png";
-import backsound from "../assets/audio/girei.mp3"
-
+import backsound from "../assets/audio/girei.mp3";
 
 const email = "febrianekaputra.396@gmail.com";
 const subject = "Minat Terhadap Proyek atau Peluang Kerja Sama";
@@ -26,56 +27,36 @@ Hormat saya,
 
 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-const phrases = ["Kadang,", "keheningan", "justru", "paling banyak bercerita"];
-
-
 function Contact() {
   const [clicked, setClicked] = useState(false);
-  const [textIndex, setTextIndex] = useState(0);
-const [fade, setFade] = useState(true);
- const audioRef = useRef(null);
+  const audioRef = useRef(null);
   const [textVariant, setTextVariant] = useState("normal");
+  const [shownTexts, setShownTexts] = useState([]);
 
-useEffect(() => {
-  if (clicked) {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setTextIndex((prev) => (prev + 1) % phrases.length);
-        setFade(true);
-      }, 2000);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }
-}, [clicked]);
-
-
- 
-
-  const handleClick = () => {
-    if (!clicked) {
-      setClicked(true);
-      setTextVariant("alt");
+  useEffect(() => {
+    if (clicked) {
+      setShownTexts([0]);
       setTimeout(() => {
         if (audioRef.current) {
           audioRef.current.play();
         }
       }, 700);
     } else {
-      setClicked(false);
-      setTextVariant("normal");
+      setShownTexts([]);
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
       }
     }
+  }, [clicked]);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+    setTextVariant(clicked ? "normal" : "alt");
   };
 
   return (
-    <section
-      id="contact"
-      className="py-16 bg-white h-[90vh] relative">
+    <section id="contact" className="py-16 bg-white h-[90vh] relative">
       <video
         autoPlay
         loop
@@ -87,61 +68,69 @@ useEffect(() => {
       </video>
 
       <div
-        className={`absolute right-[4%] h-[65vh] w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-20 ${clicked ? "opacity-0" : "opacity-100"
-          }`}
+        className={`absolute right-[4%] h-[65vh] w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-20 ${
+          clicked ? "opacity-0" : "opacity-100"
+        }`}
         style={{ backgroundImage: `url(${ebihengker})` }}
         onClick={handleClick}
       ></div>
       <div
-        className={`absolute right-[4%] h-[65vh] w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-10 ${clicked ? "opacity-100" : "opacity-0"
-          }`}
+        className={`absolute right-[4%] h-[65vh] w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-10 ${
+          clicked ? "opacity-100" : "opacity-0"
+        }`}
         style={{ backgroundImage: `url(${matahurung})` }}
       ></div>
       <audio ref={audioRef} src={backsound} preload="auto" />
 
-      <div className="absolute left-20 mt-12 z-20">
-{textVariant === "normal" ? (
-  <>
-          <h1 className="text-5xl font-bold text-left text-gray-100 mb-5">Kontak Saya</h1>
-        <p className="text-xl text-gray-100">
-          Saat ini saya terbuka untuk peluang kerja sama dan kolaborasi baru. <br /> Jangan ragu untuk menghubungi saya untuk bekerja sama, <br /> atau sekedar ingin terkoneksi! <br />
-        </p>
-        <div className="flex text-gray-400 mt-1">
-          <MdEmail className="text-[30px] mt-[1px]" /> &nbsp;
-          <a href={mailtoLink} className="text-3xl hover:bg-gray-100 hover:text-black rounded hover:duration-300 hover:delay-150">
-            febrianekaputra.396@gmail.com
-          </a>
-        </div>
-        <div className="flex text-gray-400 mt-1">
-          <FaLinkedin className="text-[35px] mt-[1px]" /> &nbsp;
-          <a href="https://www.linkedin.com/in/febrian-eka-putra-92a8a735a" className="hover:bg-gray-100 rounded hover:text-black text-2xl hover:duration-300 hover:delay-150">Febrian Eka Putra</a>
-        </div>
-        <div className="flex text-gray-400 mt-1">
-          <FaGithub className="text-[35px] mt-[1px]" /> &nbsp;
-          <a href="https://github.com/hello-ebi" className="hover:bg-gray-100 rounded hover:text-black text-3xl hover:duration-300 hover:delay-150">hello-ebi</a>
-        </div>
-        <div className="flex text-gray-400 mt-1">
-          <FaXTwitter className="text-[35px] mt-[1px]" /> &nbsp;
-          <a href="https://x.com/penantanghilang" className="text-3xl hover:bg-gray-100 rounded hover:text-black hover:duration-300 hover:delay-150">penantang.hilang</a>
-        </div>
-  </>
-) : (
-      <>
-<div className="h-[150px] transition-opacity duration-500" style={{ opacity: fade ? 1 : 0 }}>
-  <p className="text-5xl ml-10 text-gray-100">{phrases[textIndex]}</p>
-</div>
-
-    </>
-)
-
-}
+      <div className="absolute left-20 mt-12 z-30">
+        {textVariant === "normal" ? (
+          <>
+            <h1 className="text-5xl font-bold text-left text-gray-100 mb-5">Kontak Saya</h1>
+            <p className="text-xl text-gray-100">
+              Saat ini saya terbuka untuk peluang kerja sama dan kolaborasi baru. <br /> Jangan ragu untuk menghubungi saya untuk bekerja sama, <br /> atau sekedar ingin terkoneksi! <br />
+            </p>
+            <div className="flex text-gray-400 mt-1">
+              <MdEmail className="text-[30px] mt-[1px]" />  
+              <a href={mailtoLink} className="text-3xl hover:bg-gray-100 hover:text-black rounded hover:duration-300 hover:delay-150">
+                febrianekaputra.396@gmail.com
+              </a>
+            </div>
+            <div className="flex text-gray-400 mt-1">
+              <FaLinkedin className="text-[35px] mt-[1px]" />  
+              <a href="https://www.linkedin.com/in/febrian-eka-putra-92a8a735a" className="hover:bg-gray-100 rounded hover:text-black text-2xl hover:duration-300 hover:delay-150">Febrian Eka Putra</a>
+            </div>
+            <div className="flex text-gray-400 mt-1">
+              <FaGithub className="text-[35px] mt-[1px]" />  
+              <a href="https://github.com/hello-ebi" className="hover:bg-gray-100 rounded hover:text-black text-3xl hover:duration-300 hover:delay-150">hello-ebi</a>
+            </div>
+            <div className="flex text-gray-400 mt-1">
+              <FaXTwitter className="text-[35px] mt-[1px]" />  
+              <a href="https://x.com/penantanghilang" className="text-3xl hover:bg-gray-100 rounded hover:text-black hover:duration-300 hover:delay-150">penantang.hilang</a>
+            </div>
+                       <div className="flex relative  text-black mt-3 ml-10">
+              <a href={mailtoLink} className="text-3xl hover:bg-gray-500 rounded-full px-12 py-5 bg-gray-200 hover:text-black hover:duration-300 hover:delay-150 flex items-center gap-4">Kirim email<FaPaperPlane /> </a>
+            </div>
+          </>
+        ) : (
+          <div className="ml-10 w-[500px] relative mx-auto left-11 text-right space-y-2">
+            {shownTexts.includes(0) && (
+              <motion.p
+                className="text-7xl text-[#e0f7fa] text-center font-light tracking-wide z-30"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 2, y: 0 }}
+                transition={{ duration: 10 }}
+              >
+                Kadang, keheningan <br /> justru paling banyak bercerita.
+              </motion.p>
+            )}
+          </div>
+        )}
       </div>
       <div className="container relative bg-white opacity-10 rounded-3xl h-[65vh] z-10 mx-auto px-3"></div>
       <div className="absolute bottom-0 w-full">
         <Footer />
       </div>
     </section>
-
   );
 }
 
