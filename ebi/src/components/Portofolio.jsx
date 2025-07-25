@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import formGeneratorsertifikat from "../assets/images/generatorSertifikat.png";
 import portalAbsensi from "../assets/images/portalAbsensi.png"
 import ebihengker from "../assets/images/ebihengker.png"
@@ -5,9 +7,18 @@ import { FaLock } from "react-icons/fa";
 import { FaLockOpen } from "react-icons/fa";
 
 function Portfolio() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <section id="portfolio" className="pt-[100px] py-16 bg-gray-100 min-h-screen">
-      <div className="container mx-auto px-4">
+                <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container mx-auto px-4"
+        >
         <h2 className="text-3xl font-bold text-center mb-8">Portofolio Saya</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-110 transition duration-300 ease-in-out group">
@@ -75,7 +86,7 @@ function Portfolio() {
 
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
