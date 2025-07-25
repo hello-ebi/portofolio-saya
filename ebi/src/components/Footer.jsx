@@ -9,7 +9,7 @@ function Footer() {
         <p>&copy; {new Date().getFullYear()} Febrian Eka Putra. All rights reserved.</p>
         <div className="mt-1">
           <span className="flex justify-center items-center flex-row">
-            Web ini saya buat dengan:
+            Web ini saya buat menggunakan:
          <FaReact className="mx-2 text-xl" />
 <RiTailwindCssFill className="text-xl" />   
           </span>
