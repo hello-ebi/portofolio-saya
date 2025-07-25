@@ -8,7 +8,7 @@ function Hero() {
     <section id="hero" className="h-screen flex text-gray-100">
       <Background2 />
       <div
-        className="absolute w-full transform h-screen flex items-center justify-center sm:transform-none"
+        className="absolute w-full transform z-20 h-screen flex items-center justify-center sm:transform-none"
       >
         <div className="text-center px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-1">
