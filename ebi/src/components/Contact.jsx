@@ -58,7 +58,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white h-[90vh] relative">
+    <section id="contact" className="py-16 overflow-x-hidden  bg-white h-[90vh] relative">
       <video
         autoPlay
         loop

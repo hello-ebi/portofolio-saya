@@ -5,6 +5,7 @@ import { SiJavascript, SiExpress, SiMysql, SiBulma, SiMongodb } from "react-icon
 import { FaCss3, FaNodeJs, FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { VscVscodeInsiders } from "react-icons/vsc";
+import kucingcuddle from "../assets/images/kucingcuddle.png";
 
 function About() {
   const ref = useRef(null);
@@ -50,16 +51,23 @@ function About() {
           </p>
 
           <div className="text-gray-100 mb-1 text-xl font-semibold">Hard Skills</div>
-          <div className="flex flex-wrap gap-4 text-white text-7xl">
+          <div className="flex flex-wrap gap-4 text-white text-6xl">
             {skillIcons.map((Icon, index) => (
               <Icon key={index} className="hover:text-yellow-400 text-gray-400 transition-all duration-200" />
             ))}
           </div>
           <div className="text-gray-100 mt-4 mb-1 text-xl font-semibold">Tools</div>
-          <div className="flex flex-wrap gap-4 text-white text-7xl">
+          <div className="flex flex-wrap gap-4 text-white text-6xl">
             {toolsIcons.map((Icon, index) => (
               <Icon key={index} className="hover:text-yellow-400 text-gray-400 transition-all duration-200" />
             ))}
+          </div>
+          <div className="text-gray-100 mt-4 text-xl font-semibold">Soft Skill</div>
+           <div className="flex">
+              <img
+              src={kucingcuddle}
+              alt="kucingcuddle"
+              className="w-10" />
           </div>
         </motion.div>
       </div>
