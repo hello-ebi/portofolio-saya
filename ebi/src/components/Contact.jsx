@@ -58,7 +58,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 overflow-x-hidden  bg-white h-[90vh] relative">
+    <section id="contact" className="py-16 overflow-x-hidden  bg-white h-[100vh] md:h-[90vh] relative">
       <video
         autoPlay
         loop
@@ -75,13 +75,13 @@ function Contact() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div
-          className={`absolute md:right-[4%] h-[65vh] md:h-[65vh] w-[35vw] md:w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-20 ${clicked ? "opacity-0" : "opacity-100"
+          className={`absolute md:right-[4%] h-[65vh] md:h-[65vh] w-[35vw] md:w-[35vw] rounded-3xl bg-cover bg-center mt-7 transition-opacity duration-700 z-20 ${clicked ? "opacity-0" : "opacity-100"
             }`}
           style={{ backgroundImage: `url(${ebihengker})` }}
           onClick={handleClick}
         ></div> </motion.div>
       <div
-        className={`absolute md:right-[4%] w-[35vw] h-[65vh] md:h-[65vh] md:w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 z-10 ${clicked ? "opacity-100" : "opacity-0"
+        className={`absolute md:right-[4%] w-[35vw] h-[65vh] md:h-[65vh] md:w-[35vw] rounded-3xl bg-cover bg-center transition-opacity duration-700 mt-7 z-10 ${clicked ? "opacity-100" : "opacity-0"
           }`}
         style={{ backgroundImage: `url(${matahurung})` }}
       ></div>
@@ -93,14 +93,14 @@ function Contact() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="absolute md:left-20 mt-[70px] left-[150px] w-[60vw] md:mt-8 z-30">
+        <div className="absolute md:left-20 mt-[12%] left-[38%] w-[60vw] md:mt-8 z-30">
           {textVariant === "normal" ? (
             <>
               <h1 className="md:text-5xl font-bold text-center md:text-left text-gray-100 md:mb-2">Kontak Saya</h1>
               <p className="text-center md:text-left md:text-xl text-gray-100">
                 Saat ini saya terbuka untuk peluang kerja sama dan kolaborasi baru, <br /> yang bisa menambah pengalaman saya di industri teknologi. <br /> Jangan ragu untuk menghubungi saya untuk bekerja sama, <br /> atau sekedar ingin terkoneksi! <br />
               </p>
-              <div className="flex text-gray-400 md:mt-1">
+              <div className="flex text-gray-400 hidden md:mt-1">
                 <MdEmail className="md:text-[30px] md:mt-[1px]" />
                 <a href={mailtoLink} className="md:text-3xl hover:bg-gray-100 hover:text-black rounded hover:duration-300 hover:delay-150">
                   febrianekaputra.396@gmail.com
@@ -119,11 +119,11 @@ function Contact() {
                 <a href="https://x.com/penantanghilang" className="md:text-3xl hover:bg-gray-100 rounded hover:text-black hover:duration-300 hover:delay-150">penantang.hilang</a>
               </div>
               <div className="flex relative  text-black md:mt-3 md:ml-10">
-                <a href={mailtoLink} className="md:text-3xl hover:bg-yellow-400 rounded-full md:px-12 md:py-5 bg-gray-200 hover:text-black hover:duration-300 block mx-auto hover:delay-150 flex items-center md:gap-4">Kirim email<FaPaperPlane /> </a>
+                <a href={mailtoLink} className="md:text-3xl hover:bg-yellow-400 rounded-full md:px-12 md:py-5 bg-gray-200 hover:text-black hover:duration-300 block mx-auto hover:delay-150 px-[20%] py-[2%] flex items-center md:gap-4">Kirim email<FaPaperPlane /> </a>
               </div>
             </>
           ) : (
-            <div className="md:ml-10 md:w-[500px] relative mx-auto md:left-11 text-right md:space-y-2">
+            <div className="md:ml-10 md:w-[500px] mt-[40%] relative mx-auto md:left-11 text-right md:space-y-2">
               {shownTexts.includes(0) && (
                 <motion.p
                   className="md:text-7xl text-4xl text-[#e0f7fa] text-center font-light tracking-wide z-30"
@@ -138,7 +138,7 @@ function Contact() {
           )}
         </div>
       </motion.div>
-      <div className="container relative bg-white opacity-10 rounded-3xl h-[65vh] z-10 mx-auto px-3"></div>
+      <div className="container relative bg-white opacity-10 rounded-3xl h-[65vh] z-10 mx-auto mt-7 md:px-3"></div>
 
       <div className="absolute bottom-0 w-full">
         <Footer />

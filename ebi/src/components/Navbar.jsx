@@ -29,7 +29,7 @@ function Navbar() {
             </a></li>
           <li><a href="#contact" className="relative inline-block after:block after:h-[2px] p-2 after:bg-yellow-400 after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform">
             <FaEnvelope className="text-xl md:hidden" />
-            <span className="hidden md:block">Portofolio</span>
+            <span className="hidden md:block">Kontak Saya</span>
             </a></li>
         </ul>
       </div>
