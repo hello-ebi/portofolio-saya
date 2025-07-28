@@ -119,7 +119,7 @@ function Contact() {
                 <a href="https://x.com/penantanghilang" className="md:text-3xl hover:bg-gray-100 rounded hover:text-black hover:duration-300 hover:delay-150">penantang.hilang</a>
               </div>
               <div className="flex relative  text-black md:mt-3 md:ml-10">
-                <a href={mailtoLink} className="md:text-3xl hover:bg-yellow-400 rounded-full md:px-12 md:py-5 bg-gray-200 hover:text-black hover:duration-300 block mx-auto hover:delay-150 mt-5 px-[20%] py-[2%] flex items-center md:gap-4">Kirim email<FaPaperPlane /> </a>
+                <a href={mailtoLink} className="md:text-3xl hover:bg-yellow-400 rounded-full md:px-12 md:py-5 bg-gray-200 hover:text-black hover:duration-300 block mx-auto hover:delay-150 mt-2 lg:mt-5 px-[20%] py-[2%] flex items-center md:gap-4">Kirim email<FaPaperPlane /> </a>
               </div>
             </>
           ) : (
