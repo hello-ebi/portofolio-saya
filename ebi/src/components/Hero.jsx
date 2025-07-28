@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function Hero() {
   return (
-    <section id="hero" className="h-screen flex text-gray-100">
+    <section id="hero" className="h-screen w-full flex text-gray-100">
       <Background2 />
       <div
         className="absolute w-full transform z-20 h-screen flex items-center justify-center sm:transform-none"

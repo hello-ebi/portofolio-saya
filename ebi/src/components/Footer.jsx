@@ -4,7 +4,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 function Footer() {
   return (
     <>
-    <footer className="bg-stone-950 text-center text-white py-4">
+    <footer className="bg-stone-950 w-full text-center text-white py-4">
       <div className="container mx-auto text-center">
         <p>&copy; {new Date().getFullYear()} Febrian Eka Putra. All rights reserved.</p>
         <div className="mt-1">

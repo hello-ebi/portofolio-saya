@@ -11,7 +11,7 @@ function Portfolio() {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <section id="portfolio" className="pt-[100px] py-16 bg-gray-100 min-h-screen">
+    <section id="portfolio" className="pt-[100px] py-16 w-full bg-gray-100 min-h-screen">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}

@@ -34,7 +34,7 @@ function About() {
   return (
     <section
       id="about"
-      className="pt-[80px] md:pt-[100px] h-screen bg-black flex flex-col justify-between items-start"
+      className="pt-[80px] w-full md:pt-[100px] h-screen bg-black flex flex-col justify-between items-start"
     >
       <div className="relative z-10">
         <motion.div
