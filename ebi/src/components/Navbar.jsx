@@ -6,7 +6,7 @@ import { FaHome, FaUser, FaBriefcase, FaEnvelope } from "react-icons/fa";
 function Navbar() {
 
   return (
-    <nav className="bg-stone-950 relative text-white h-[8vh] lg:h-[10vh] p-4 sticky top-0 z-20">
+    <nav className="bg-stone-950 w-[100vw] relative text-white h-[8vh] lg:h-[10vh] p-4 sticky top-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
 <div className="z-30 -translate-y-[50%] lg:-translate-y-9 lg:-translate-x-5 top-0 mt-3">
   <img src={ebilogogif} alt="ebi" className="w-[150px]" />
